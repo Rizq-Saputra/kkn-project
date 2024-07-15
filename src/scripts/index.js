@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap';
 import './components/main';
 import '../styles/style.css';
 import '../styles/responsive.css';

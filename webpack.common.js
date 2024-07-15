@@ -1,5 +1,4 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
@@ -25,7 +24,6 @@ module.exports = {
           {
             loader: 'css-loader',
           },
-          MiniCssExtractPlugin.loader, 'css-loader',
         ],
       },
     ],
@@ -56,9 +54,6 @@ module.exports = {
           },
         },
       ],
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].styles.css',
     }),
   ],
 };

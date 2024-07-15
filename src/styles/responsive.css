@@ -1,0 +1,190 @@
+@media screen and (min-width: 650px) {
+  .app-bar {
+    flex-direction: row;
+  }
+
+  .app-bar .app-bar__menu {
+    display: none;
+  }
+
+  .app-bar .app-bar__navigation {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .app-bar .app-bar__navigation ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .app-bar .app-bar__navigation ul li {
+    position: relative;
+  }
+
+  .app-bar .app-bar__navigation ul li .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: auto;
+    display: none;
+    flex-direction: column;
+    background-color: #019973;
+  }
+
+  .app-bar .app-bar__navigation ul li:hover .dropdown-content {
+    display: flex;
+  }
+
+  .app-bar .app-bar__navigation ul li .dropdown-content a {
+    padding: 8px 16px;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .app-bar .app-bar__brand h1 {
+    font-size: 2em;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #333;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .app-bar {
+    padding: 10px 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .content1 .img-fluid,
+  .content4 .img-fluid {
+    display: none;
+  }
+
+  .content1 {
+    position: relative;
+    background-image: url(https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  .content1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .content1 > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .heading-title {
+    text-align: center;
+    line-height: 40px;
+    margin-top: 20px;
+  }
+  .deskripsi {
+    text-align: center;
+  }
+  .button-content1 {
+    text-align: center;
+  }
+
+  .text-content2 {
+    text-align: center;
+  }
+  .lead {
+    font-size: 14px;
+    padding-inline: 35px;
+  }
+
+  .content3 .card img {
+    height: 150px !important;
+  }
+  .content3 .card-title {
+    font-size: 16px;
+  }
+  .content3 .card-text {
+    font-size: 12px;
+  }
+  .content4 {
+    text-align: center;
+  }
+  .content5 {
+    height: 25vh;
+  }
+  .content5 .h2 {
+    font-size: 18px;
+  }
+  .content5 .deskripsi {
+    padding-inline: 100px;
+    font-size: small;
+  }
+  .content5 .tester {
+    height: 30vh;
+  }
+  .content6 .container {
+    margin-top: 30px !important;
+  }
+  .kalkulator {
+    height: 105vh !important;
+  }
+  .konsultasi .card-img-left {
+    width: 135px !important;
+    height: 290px !important;
+  }
+
+  .konsultasi .card-title {
+    font-size: 1.2rem;
+  }
+
+  .konsultasi .card-text {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 3;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .content5 {
+    height: 20vh;
+  }
+  .content5 .deskripsi {
+    display: none;
+  }
+  .content5 .tester {
+    width: 80% !important;
+  }
+  .content5 .btn {
+    margin-top: 10px;
+  }
+  .content6 .container {
+    margin-top: 0px !important;
+  }
+  .kalkulator {
+    margin-top: 3rem;
+  }
+}

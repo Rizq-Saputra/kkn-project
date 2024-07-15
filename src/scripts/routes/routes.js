@@ -8,6 +8,7 @@ import Quiz from '../views/pages/quiz';
 import DetailArtikel from '../views/pages/detailartikel';
 import DetailMpasi from '../views/pages/detailmpasi';
 import DetailQuiz from '../views/pages/detailquiz';
+import StartQuiz from '../views/pages/start-quiz';
 
 const routes = {
   '/': Home,
@@ -17,6 +18,7 @@ const routes = {
   '/konsultasi': konsultasi,
   '/tentangkami': AboutUs,
   '/quiz': Quiz,
+  '/start-quiz': StartQuiz,
   '/quiz/:id': DetailQuiz,
   '/artikel/:id': DetailArtikel,
   '/mpasi/:id': DetailMpasi,
