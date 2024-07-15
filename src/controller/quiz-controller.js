@@ -1,5 +1,4 @@
 /* eslint-disable consistent-return */
-// controller/quiz-controller.js
 const QuizService = require('../service/quiz-service');
 
 const createQuiz = async (req, res, next) => {

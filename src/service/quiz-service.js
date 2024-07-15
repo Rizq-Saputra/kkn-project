@@ -1,8 +1,13 @@
-// service/quiz-service.js
-const Quiz = require('../models/quiz'); // Ensure this path is correct
+const Quiz = require('../models/quiz');
+const { createQuizValidation } = require('../validation/quiz-validation');
+const { validate } = require('../validation/validation');
 
 const createQuiz = async (quizData) => {
-  const quiz = await Quiz.create(quizData);
+  // Validasi data request
+  const validatedData = validate(createQuizValidation, quizData);
+
+  // Buat quiz
+  const quiz = await Quiz.create(validatedData);
   return quiz;
 };
 

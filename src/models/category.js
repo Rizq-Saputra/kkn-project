@@ -14,6 +14,9 @@ const Category = db.define('category', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  gambar: {
+    type: DataTypes.STRING(2048),
+  },
 }, {
   freezeTableName: true,
 });

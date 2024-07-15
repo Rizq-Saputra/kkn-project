@@ -253,10 +253,11 @@ POST http://localhost:3000/api/quiz
 Content-Type: application/json
 
 {
-  "soal": "What is the a symbol for water?",
-  "jawaban": ["A", "B", "C"],
+  "soal": "Apa jawabannya?",
+  "jawaban": ["A", "D salah", "C","B Benar"],
   "jawabanBenar": "C",
-  "kategoriId": 2,
+  "gambar": "https://www.planstreetinc.com/wp-content/uploads/2021/07/what-is-mental-health-1130x675.png",
+  "kategoriId": 4,
   "point": 10
 }
 
@@ -268,7 +269,8 @@ POST http://localhost:3000/api/category
 Content-Type: application/json
 
 {
-  "name": "Health"
+  "name": "Science",
+  "gambar": "https://img.brainkart.com/article/articleTEVa9s13.png"
 }
 
 ### Get kategori

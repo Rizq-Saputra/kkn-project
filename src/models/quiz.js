@@ -22,6 +22,10 @@ const Quiz = db.define('quiz', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  gambar: {
+    type: DataTypes.STRING(2048),
+    allowNull: true,
+  },
   kategoriId: {
     type: DataTypes.INTEGER,
     references: {

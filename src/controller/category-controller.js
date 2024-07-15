@@ -1,4 +1,4 @@
-// controller/category-controller.js
+/* eslint-disable no-unused-vars */
 const CategoryService = require('../service/category-service');
 
 const createCategory = async (req, res, next) => {
@@ -6,7 +6,7 @@ const createCategory = async (req, res, next) => {
     const category = await CategoryService.createCategory(req.body);
     res.status(201).json({ message: 'Category created successfully', data: category });
   } catch (error) {
-    next(error);
+    res.status(400).json({ error: error.message });
   }
 };
 

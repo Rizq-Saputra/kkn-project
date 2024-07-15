@@ -1,8 +1,12 @@
-// service/category-service.js
 const Category = require('../models/category');
+const { createCategoryValidation } = require('../validation/category-validation');
+const { validate } = require('../validation/validation');
 
 const createCategory = async (categoryData) => {
-  const category = await Category.create(categoryData);
+  const validatedData = validate(createCategoryValidation, categoryData);
+
+  // Buat kategori
+  const category = await Category.create(validatedData);
   return category;
 };
 

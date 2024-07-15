@@ -1,0 +1,261 @@
+### Get quiz
+GET http://localhost:3000/api/quiz/category/2
+### quiz
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Manakah pernyataan yang paling tepat untuk mendefinisikan kondisi stunting?",
+  "jawaban": ["Kondisi dimana anak memiliki berat badan berlebih.", "Kondisi dimana anak memiliki tinggi badan di bawah standar usianya karena kurang gizi yang kronis.", "Kondisi dimana anak memiliki pertumbuhan yang sangat cepat.","Kondisi dimana anak memiliki berat badan yang normal namun tinggi badan yang berlebih."],
+  "jawabanBenar": "Kondisi dimana anak memiliki tinggi badan di bawah standar usianya karena kurang gizi yang kronis.",
+  "gambar": "https://www.planstreetinc.com/wp-content/uploads/2021/07/what-is-mental-health-1130x675.png",
+  "kategoriId": 5,
+  "point": 1
+}
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Bagaimana perbedaan utama antara stunting dan pendek genetik dalam hal penyebabnya?",
+  "jawaban": ["Stunting disebabkan oleh aktivitas fisik yang berlebihan, sedangkan pendek genetik disebabkan oleh pola makan yang buruk.", "Stunting disebabkan oleh kekurangan gizi yang kronis, sedangkan pendek genetik disebabkan oleh faktor keturunan.","Stunting disebabkan oleh faktor keturunan, sedangkan pendek genetik disebabkan oleh kekurangan gizi.","Stunting disebabkan oleh penyakit infeksi, sedangkan pendek genetik disebabkan oleh kurang tidur."],
+  "jawabanBenar": "Stunting disebabkan oleh kekurangan gizi yang kronis, sedangkan pendek genetik disebabkan oleh faktor keturunan.",
+  "gambar": "",
+  "kategoriId": 6,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Apa yang biasanya menyertai kondisi stunting tetapi tidak pada pendek genetik?",
+  "jawaban": ["Tinggi badan di atas rata-rata.", "Perkembangan kognitif dan fisik yang terhambat.","Penampilan tubuh yang proporsional.","Tidak ada gangguan kesehatan yang terkait."],
+  "jawabanBenar": "Perkembangan kognitif dan fisik yang terhambat.",
+  "gambar": "",
+  "kategoriId": 6,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Berikut adalah beberapa contoh dampak dari stunting, kecuali",
+  "jawaban": ["Rendahnya perkembangan kognitif", "Terhambatnya perkembangan motorik","Menurunnya prestasi belajar","Tinggi badan anak sesuai dengan standar usianya"],
+  "jawabanBenar": "Tinggi badan anak sesuai dengan standar usianya",
+  "gambar": "",
+  "kategoriId": 5,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Mengapa asupan nutrisi yang cukup penting bagi remaja putri atau calon ibu?",
+  "jawaban": ["Agar mereka bisa mengurangi asupan kalori.", "Agar mereka dapat memiliki lebih banyak waktu untuk tidur.","Agar mereka siap secara fisik untuk kehamilan dan menghindari masalah kesehatan pada bayi.","Agar mereka bisa meningkatkan berat badan mereka."],
+  "jawabanBenar": "Agar mereka siap secara fisik untuk kehamilan dan menghindari masalah kesehatan pada bayi.",
+  "gambar": "",
+  "kategoriId": 5,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Apa nutrisi kunci yang sangat penting bagi remaja putri calon ibu untuk mencegah kelahiran anak stunting?",
+  "jawaban": ["Vitamin C dan Vitamin D", "Asam folat, zat besi, kalsium, dan protein","Lemak Jenuh dan Gula","Serat dan Magnesium"],
+  "jawabanBenar": "Asam folat, zat besi, kalsium, dan protein",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Protein adalah nutrisi penting yang diperlukan tubuh untuk pertumbuhan dan perbaikan sel. Protein terbagi menjadi dua jenis utama, yaitu protein nabati dan protein hewani. Manakah dari berikut ini yang merupakan contoh sumber protein hewani?",
+  "jawaban": ["Kacang-kacangan dan biji-bijian", "Tahu dan tempe","Ikan dan daging ayam","Bayam dan brokoli"],
+  "jawabanBenar": "Ikan dan daging ayam",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Apa jenis protein yang terlihat pada gambar diatas?",
+  "jawaban": ["Protein hewani", "Protein nabati","Protein sintetis","Protein campuran"],
+  "jawabanBenar": "Protein nabati",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Berikut ini adalah beberapa pencegahan stunting yang bisa dilakukan remaja putri atau calon ibu, kecuali…",
+  "jawaban": ["Mencegah anemia dengan minum tablet tambah darah", "Menerapkan pola hidup sehat dan bersih","Mengkonsumsi makanan gizi seimbang","Perbanyak konsumsi jamu herbal"],
+  "jawabanBenar": "Perbanyak konsumsi jamu herbal",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Kondisi apa yang terjadi ketika darah tidak memiliki sel darah merah sehat yang cukup, yang menyebabkan aliran oksigen berkurang ke organ tubuh?",
+  "jawaban": ["leukimia", "hemofilia","anemia","trombositopenia"],
+  "jawabanBenar": "anemia",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Siti adalah seorang remaja putri yang sering merasa lemas dan pusing. Setelah pemeriksaan lebih lanjut, dokter menyarankan agar Siti mengkonsumsi tablet tambah darah. Dokter menjelaskan bahwa kondisi Siti disebabkan oleh kurangnya zat besi dalam tubuhnya, yang bisa berkontribusi pada masalah stunting jika tidak ditangani.
+Mengapa tablet tambah darah penting untuk Siti?",
+  "jawaban": ["Untuk menambah berat badan.", "Untuk meningkatkan kadar hemoglobin dan mencegah anemia.","Untuk menurunkan kadar gula darah.","Untuk mengurangi tekanan darah tinggi."],
+  "jawabanBenar": "Untuk meningkatkan kadar hemoglobin dan mencegah anemia.",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Mengapa remaja putri (rematri) rentan mengalami anemia?",
+  "jawaban": ["Karena rematri cenderung mengonsumsi makanan manis yang kurang mengandung zat besi.", "Karena kebutuhan tubuh rematri terhadap zat besi meningkat selama masa pertumbuhan dan menstruasi.","Karena rematri sering melakukan olahraga intensif tanpa asupan nutrisi yang cukup. ","Karena rematri memiliki kecenderungan genetik untuk tidak dapat menyerap zat besi dari makanan."],
+  "jawabanBenar": "Karena kebutuhan tubuh rematri terhadap zat besi meningkat selama masa pertumbuhan dan menstruasi.",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Lahirnya bayi stunting bisa dicegah oleh seorang calon ibu sejak remaja dengan mencegah anemia, salah satu pencegahan anemia pada remaja putri adalah...",
+  "jawaban": ["mengkonsumsi obat tablet tambah darah secara rutin", "berolahraga yang sering","memakan nanas muda","melakukan diet yang ketat"],
+  "jawabanBenar": "mengkonsumsi obat tablet tambah darah secara rutin",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Berikut adalah fungsi zat besi, kecuali",
+  "jawaban": ["menjaga daya tahan tubuh", "menghantarkan oksigen ke seluruh tubuh","meningkatkan konsentrasi dan kemampuan berpikir","membentuk tulang besi"],
+  "jawabanBenar": "membentuk tulang besi",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Bahan baku rokok adalah...",
+  "jawaban": ["tembakau", "kopi","teh","cengkeh"],
+  "jawabanBenar": "tembakau",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Rokok mengandung berbagai bahan berbahaya yang dapat merusak kesehatan. Di antara bahan-bahan tersebut, ada satu yang sangat adiktif dan membuat penggunanya sulit berhenti merokok. Bahan apakah yang membuat rokok begitu adiktif?",
+  "jawaban": ["Tar", "Nikotin","Karbon monoksida","Amonia"],
+  "jawabanBenar": "Nikotin",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Orang yang tidak merokok tetapi menghisap asap rokok secara tidak langsung disebut...",
+  "jawaban": ["Perokok aktif", "Perokok pasif","Perokok pemula","Perokok ahli"],
+  "jawabanBenar": "Perokok pasif",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Orang yang menghisap rokok secara langsung adalah...",
+  "jawaban": ["Perokok aktif", "Perokok pasif","Perokok pemula","Perokok ahli"],
+  "jawabanBenar": "Perokok aktif",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Paparan asap rokok selama kehamilan dapat menyebabkan resiko bayi lahir stunting. Apa mekanisme utama yang menyebabkan hal ini terjadi?",
+  "jawaban": ["Meningkatkan produksi hormon pertumbuhan pada janin", "Mengurangi aliran oksigen dan nutrisi ke janin melalui plasenta","Mempercepat perkembangan otak janin secara tidak normal","Meningkatkan berat badan lahir bayi secara signifikan"],
+  "jawabanBenar": "Mengurangi aliran oksigen dan nutrisi ke janin melalui plasenta",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
+
+###
+POST http://localhost:3000/api/quiz
+Content-Type: application/json
+
+{
+  "soal": "Ada istilah secondhand smoke dan thirdhand smoke. Secondhand smoke adalah asap rokok yang dilepaskan oleh perokok kemudian dihirup oleh orang-orang di sekitarnya. Kemudian apa yang dimaksud dengan thirdhand smoke?",
+  "jawaban": ["Asap rokok yang dihirup oleh perokok", "Sisa-sisa zat kimia dari asap rokok yang menempel pada permukaan benda-benda di sekitar","Asap rokok yang dihirup oleh orang di sekitar perokok","Asap rokok yang terhirup melalui ventilasi udara"],
+  "jawabanBenar": "Sisa-sisa zat kimia dari asap rokok yang menempel pada permukaan benda-benda di sekitar",
+  "gambar": "",
+  "kategoriId": 2,
+  "point": 1
+}
