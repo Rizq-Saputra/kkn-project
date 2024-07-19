@@ -7,16 +7,16 @@ class content1 extends HTMLElement {
         <div class="container">
           <div class="row align-items-center">
             <div class="col-12 col-md-6 col-lg-5">
-              <h1 tabindex="0" class="heading-title fw-bold">
-                Aplikasi Edukasi<br> <span class="text-warning">Gizi Balita</span> untuk Pencegahan <span class="text-warning">Stunting</span>
+              <h1 tabindex="0" class="heading-title mochi fw-bold">
+                Aplikasi Edukasi<br> <span class="purple">Gizi Balita</span> untuk Pencegahan <span class="purple">Stunting</span>
               </h1>
-              <p tabindex="0" class="lead my-2 deskripsi">
-                Temukan solusi terbaik untuk <span class="text-warning">mencegah stunting</span> pada balita
-                dengan <span class="text-warning">StuntCare</span>. Dapatkan informasi gizi yang tepat dan
+              <p tabindex="0" class="lead my-2 deskripsi salsa-font">
+                Temukan solusi terbaik untuk <span class="purple">mencegah stunting</span> pada balita
+                dengan <span class="purple">StuntCare</span>. Dapatkan informasi gizi yang tepat dan
                 rekomendasi yang terpercaya untuk kesehatan optimal anak Anda.
               </p>
               <p class="mt-4 button-content1">
-                <button id="scrollToContent2" aria-label="tombol Mari mulai" class="btn btn-warning py-3 px-2 text-white">Mari Mulai! ></button>
+                <button id="scrollToContent2" aria-label="tombol Mari mulai" class="btn bg-purple py-3 px-2 text-white">Mari Mulai! ></button>
               </p>
             </div>
             <div class="col-12 col-md-6 ms-md-auto mt-4 mt-md-0">

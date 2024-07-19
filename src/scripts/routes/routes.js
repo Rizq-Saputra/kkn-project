@@ -9,11 +9,13 @@ import DetailArtikel from '../views/pages/detailartikel';
 import DetailMpasi from '../views/pages/detailmpasi';
 import DetailQuiz from '../views/pages/detailquiz';
 import StartQuiz from '../views/pages/start-quiz';
+import KalkulatorBMI from '../views/pages/bmi';
 
 const routes = {
   '/': Home,
   '/artikel': Artikel,
   '/kalkulator': Kalkulator,
+  '/bmi': KalkulatorBMI,
   '/mpasi': Mpasi,
   '/konsultasi': konsultasi,
   '/tentangkami': AboutUs,

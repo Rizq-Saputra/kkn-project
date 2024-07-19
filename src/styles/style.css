@@ -9,8 +9,81 @@ body {
 } */
 
 .ijonih {
-  color: #019973;
+  color: #66D1FF;
 }
+
+.purple{
+  color: #FF00A8;
+}
+
+.bg-purple{
+  background-color: #FF00A8;
+}
+
+.salsa-font {
+  font-family: 'Salsa', cursive;
+}
+
+.mochi {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
+:root {
+  --underweight: orange;
+  --normal: green;
+  --overweight: lightcoral;
+  --obese: crimson;
+}
+
+.output {
+  text-align: center;
+}
+
+.output #bmi {
+  font-size: 4rem;
+}
+
+.output #desc strong {
+  text-transform: uppercase;
+}
+
+.bmi-scale {
+  display: flex;
+}
+
+.bmi-scale div {
+  flex: 1;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.bmi-scale h4 {
+  font-size: 0.75rem;
+  color: slategray;
+}
+
+.underweight {
+  border-top: 5px solid var(--underweight);
+  color: var(--underweight);
+}
+
+.healthy {
+  border-top: 5px solid var(--normal);
+  color: var(--normal);
+}
+
+.overweight {
+  border-top: 5px solid var(--overweight);
+  color: var(--overweight);
+}
+
+.obese {
+  border-top: 5px solid var(--obese);
+  color: var(--obese);
+}
+
+
 
 button,
 a,
@@ -46,7 +119,7 @@ input,
 
 .app-bar {
   padding: 8px 16px;
-  background-color: #019973;
+  background-color: #66D1FF;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,7 +163,7 @@ input,
   display: none;
   flex-direction: column;
   width: 100%;
-  background-color: #019973;
+  background-color: #66D1FF;
   position: absolute;
   top: 50px;
   left: 0;
@@ -109,7 +182,7 @@ input,
 
 .app-bar .app-bar__navigation ul li {
   width: 100%;
-  margin: 0 10px;
+  margin: 0;
 }
 
 .app-bar .app-bar__navigation ul li a {
@@ -124,13 +197,13 @@ input,
 
 .app-bar .app-bar__navigation ul li a:hover,
 .app-bar .app-bar__navigation ul li a:focus {
-  color: #ffca2c;
+  color: #FF00A8;
 }
 
 .app-bar .app-bar__navigation ul li .dropdown-content {
   display: none;
   flex-direction: column;
-  background-color: #019973;
+  background-color: #66D1FF;
   width: 100%;
 }
 
@@ -146,7 +219,7 @@ input,
 
 .app-bar .app-bar__navigation ul li .dropdown-content a:hover,
 .app-bar .app-bar__navigation ul li .dropdown-content a:focus {
-  background-color: #017a58;
+  background-color: #FF00A8;
   color: #faf7f7;
 }
 
@@ -177,7 +250,7 @@ input,
 }
 
 .content1 {
-  background-color: #019973;
+  background-color: #66D1FF;
   color: white;
 }
 .image__1 {
@@ -237,7 +310,7 @@ input,
 }
 
 .content4 {
-  background-color: #019973;
+  background-color: #66D1FF;
   color: white;
 }
 
@@ -321,7 +394,7 @@ input:checked + .radio-tile label {
 }
 
 .btn-custom {
-  background-color: #019973 !important;
+  background-color: #66D1FF !important;
   color: white !important;
   border: none !important;
   align-content: center !important;
@@ -329,7 +402,7 @@ input:checked + .radio-tile label {
 }
 
 .btn-custom:hover {
-  background-color: #017a5c !important;
+  background-color: #FF00A8 !important;
   color: #e0f7f4 !important;
 }
 
@@ -338,19 +411,19 @@ input:checked + .radio-tile label {
 }
 
 input:checked + .radio-tile2 {
-  background-color: #019973;
-  box-shadow: 0 0 12px #019973;
+  background-color: #66D1FF;
+  box-shadow: 0 0 12px #66D1FF;
   transform: scale(1.1);
 }
 
 input:hover + .radio-tile2 {
-  box-shadow: 0 0 12px #019973;
+  box-shadow: 0 0 12px #66D1FF;
 }
 
 input:checked + .radio-tile2 ion-icon,
 input:checked + .radio-tile2 label {
   color: white !important;
-  fill: #019973;
+  fill: #66D1FF;
 }
 /* 
   mpasi
@@ -503,7 +576,7 @@ input:checked + .radio-tile2 label {
 */
 
 .footer {
-  background-color: #009879;
+  background-color: #66D1FF;
   color: #fff;
   padding: 20px 0;
 }
@@ -574,7 +647,7 @@ input:checked + .radio-tile2 label {
   z-index: 1000;
   border: none; 
   outline: none; 
-  background-color: #017a58; 
+  background-color: #FF00A8; 
   color: white;
   cursor: pointer;
   padding: 7px;
@@ -584,4 +657,26 @@ input:checked + .radio-tile2 label {
 
 .ontop:hover {
   background-color: #555;
+}
+
+.bg-custom {
+  background-color: #1D1B24;
+}
+.text-secondary_purple {
+  color: #6C63FF;
+}
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #6C63FF;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+.icon-circle:hover {
+  background-color: #fff;
+  color: #0e0e0e;
 }

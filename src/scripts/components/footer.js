@@ -4,44 +4,69 @@ class FooterElement extends HTMLElement {
     super();
 
     this.innerHTML = `
-      <footer class="footer">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-4 mb-4">
-            <img tabindex="0" src="../images/Logo.png" height="30" alt="logo StuntCare" />
-            <div class="social-icons">
-              <a tabindex="0" aria-label="Github" href="https://www.github.com/"<i class="bi bi-github"></i></a>
-              <a tabindex="0" aria-label="Linkedin" href="https://www.linkedin.com/"<i class="bi bi-linkedin"></i></a>
-              <a tabindex="0" aria-label="Instagram" href="https://www.instagram.com/"<i class="bi bi-instagram"></i></a>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <h1 tabindex="0"><span class="text-warning title fw-bold">Layanan</span></h1>
-            <ul class="list-unstyled">
-              <a tabindex="0" class="nav-link" href="#">Beranda</a>
-              <a tabindex="0" class="nav-link" href="#/artikel">Artikel</a>
-              <a tabindex="0" class="nav-link" href="#/kalkulator">Kalkulator Gizi</a>
-              <a tabindex="0" class="nav-link" href="#/mpasi">MPASI</a>
-              <a tabindex="0" class="nav-link" href="#/tentangkami">Tentang Kami</a>
-            </ul>
-          </div>
-          <div class="col-md-4 mb-4">
-            <h1 class="title" tabindex="0">Kelompok<span class="text-warning fw-bold"> C624-PS076</span></h1>
-            <ul class="list-unstyled" tabindex="0">
-              <li>
-                <span>F0096YB29 - Muhammad Fery Syahputra - F06</span>
-              </li>
-              <li>
-                <span>F4206YA030 - Muhammad Firza Fernanda - F01</span>
-              </li>
-              <li>
-                <span>F2696YA373 - Muhammad Rizq Saputra - F02</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
+       <footer class="mt-5 bg-custom px-4 py-5">
+    <div class="container text-center">
+      <p class="font-weight-bold text-secondary_purple" style="font-size: 1.25rem; white-space: nowrap;">
+        Created By Rizq Saputra
+      </p>
+      <ul class="list-unstyled d-flex justify-content-center text-white mt-3">
+        <li class="mx-2">
+          <a href="#" class="text-decoration-none text-white">Home</a>
+        </li>
+        <li class="mx-2">
+          <a href="#" class="text-decoration-none text-white">About</a>
+        </li>
+        <li class="mx-2">
+          <a href="#" class="text-decoration-none text-white">Project</a>
+        </li>
+        <li class="mx-2">
+          <a href="#" class="text-decoration-none text-white">Blog</a>
+        </li>
+      </ul>
+      <ul class="list-unstyled d-flex justify-content-center text-white mt-4">
+        <li class="mx-2">
+          <a
+            href="https://www.instagram.com/rizqsptr/"
+            target="_blank"
+            aria-label="Instagram"
+            class="icon-circle"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li class="mx-2">
+          <a
+            href="https://www.linkedin.com/in/muhammad-rizq-saputra-378088281/"
+            target="_blank"
+            aria-label="LinkedIn"
+            class="icon-circle"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <li class="mx-2">
+          <a
+            href="https://github.com/Rizq-Saputra"
+            target="_blank"
+            aria-label="GitHub"
+            class="icon-circle"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="mx-2">
+          <a
+            href="mailto:rizky002211@gmail.com"
+            target="_blank"
+            aria-label="Email"
+            class="icon-circle"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
       `;
   }
 }

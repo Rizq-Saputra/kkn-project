@@ -38,6 +38,7 @@ const createSkeletonMpasiItemTemplate = (count) => {
 
   return template;
 };
+
 export const createQuizItemTemplate = (category) => `
   <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mpasi-pages">
     <a href="#/quiz/${category.id}" class="category-link" data-id="${category.id}">
@@ -53,36 +54,124 @@ export const createQuizItemTemplate = (category) => `
 
 export const createQuizDetailTemplate = (quiz, currentQuestion, totalQuestions) => `
   <div class="d-flex justify-content-center align-items-center mb-4" style="width: 100vw;">
-    <div class="quiz-item card p-3 shadow" style="max-width: 500px; width:100%;">
-      <h3 class="quiz-question card-title">${quiz.soal}</h3>
+    <div class="quiz-item card p-3 shadow" style="max-width: 1000px; width: 100%;">
+      <h3 class="quiz-question card-title" style="font-size: 1.25rem;">${quiz.soal}</h3>
       <p class="text-muted">Question ${currentQuestion} of ${totalQuestions}</p>
-      <ul class="quiz-answers list-unstyled" style="margin-right: 20px;">
+      <div class="quiz-answers row" style="display: flex; flex-wrap: wrap;">
         ${quiz.jawaban.map((answer, index) => `
-          <li class="my-2">
-            <div class="form-check" style="position: relative;">
-              <input class="form-check-input" type="radio" id="${quiz.id}-${answer}" name="quiz-${quiz.id}" value="${answer}" style="position: absolute; opacity: 0;">
-              <label class="form-check-label d-block" for="${quiz.id}-${answer}" style="padding: 10px 15px; border-radius: 10px; border: 2px solid #019973; cursor: pointer; display: flex; align-items: center; justify-content: flex-start; transition: background-color 0.3s, color 0.3s, border-color 0.3s;">
-                <span class="answer-label" style="margin-right: 8px; font-weight: bold;">${String.fromCharCode(65 + index)}.</span>
+          <div class="col-6 my-2 d-flex align-items-stretch">
+            <div class="form-check w-100" style="position: relative;">
+              <input class="form-check-input" type="radio" id="${quiz.id}-${answer}" name="quiz-${quiz.id}" value="${answer}" data-point="${quiz.point}" style="position: absolute; opacity: 0;">
+              <label class="form-check-label d-block shape-${index}" for="${quiz.id}-${answer}" style="padding: 10px 15px; border-radius: 10px; border: 2px solid; cursor: pointer; display: flex; align-items: center; justify-content: flex-start; transition: background-color 0.3s, color 0.3s, border-color 0.3s;">
+                <span class="answer-label shape-${index}">${String.fromCharCode(65 + index)}</span>
                 <span class="answer-text">${answer}</span>
               </label>
             </div>
-          </li>
+          </div>
         `).join('')}
-      </ul>
-      <button class="btn btn-custom mt-3 submit-answer" data-quiz-id="${quiz.id}" data-correct-answer="${quiz.jawabanBenar}" data-point="${quiz.point}">Submit</button>
+      </div>
+      <div class="d-flex justify-content-between mt-3">
+        <button class="btn btn-secondary prev-question" ${currentQuestion === 1 ? 'disabled' : ''}>Previous</button>
+        <button class="btn btn-custom next-question">Next</button>
+      </div>
     </div>
   </div>
 
   <style>
-    .form-check-input:checked + .form-check-label {
-      background-color: #019973;
-      color: white;
-      border-color: #019973;
+    .quiz-answers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
     }
+    .quiz-answers .col-6 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 50%; /* Ensure two columns */
+      flex: 0 0 50%; /* Ensure two columns */
+    }
+    .quiz-answers .form-check-label {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Hover and checked styles */
+    .form-check-input:checked + .form-check-label,
+    .form-check-input:checked + .form-check-label:hover,
     .form-check-label:hover {
-      background-color: #019973;
       color: white;
-      border-color: #019973;
+    }
+
+    /* Specific styles for each answer */
+    .shape-0 .answer-label {
+      background-color: red;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .shape-0.form-check-label:hover,
+    .form-check-input:checked + .shape-0.form-check-label {
+      background-color: #FF6666;
+      border-color: red;
+    }
+    .shape-1 .answer-label {
+      background-color: green;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .shape-1.form-check-label:hover,
+    .form-check-input:checked + .shape-1.form-check-label {
+      background-color: #66FF66;
+      border-color: green;
+    }
+    .shape-2 .answer-label {
+      background-color: blue;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .shape-2 .answer-label:before {
+      content: '';
+      display: block;
+      padding-top: 100%; /* ratio 1:1 */
+    }
+    .shape-2.form-check-label:hover,
+    .form-check-input:checked + .shape-2.form-check-label {
+      background-color: #6666FF;
+      border-color: blue;
+    }
+    .shape-3 .answer-label {
+      background-color: yellow;
+      border-radius: 10px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .shape-3.form-check-label:hover,
+    .form-check-input:checked + .shape-3.form-check-label {
+      background-color: #FFFF66;
+      border-color: yellow;
+    }
+
+    @media (max-width: 576px) {
+      .quiz-answers .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
     }
   </style>
 `;

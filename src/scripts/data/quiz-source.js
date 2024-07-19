@@ -39,6 +39,24 @@ class QuizSource {
       });
     }
   }
+
+  static async getAllQuizzes() {
+    try {
+      const response = await fetch(API_ENDPOINT.QUIZ);
+      const responseJson = await response.json();
+      return responseJson.data;
+    } catch (error) {
+      console.error('Failed to fetch all quizzes:', error);
+      import('sweetalert2').then((Swal) => {
+        Swal.default.fire({
+          icon: 'error',
+          title: 'Error loading quizzes. Please try again later!',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+    }
+  }
 }
 
 export default QuizSource;

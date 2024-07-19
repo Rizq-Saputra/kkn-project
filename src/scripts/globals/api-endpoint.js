@@ -19,6 +19,7 @@ const API_ENDPOINT = {
   KOMENTAR_MPASI: `${BASE_URL}/api/komentar/mpasi`,
   KOMENTAR_ARTIKEL: `${BASE_URL}/api/komentar/artikel`,
   QUIZ_BY_CATEGORY: (categoryId) => `${BASE_URL}/api/quiz/category/${categoryId}`,
+  QUIZ: `${BASE_URL}/api/quiz`,
   CATEGORIES: `${BASE_URL}/api/category`,
   DETAILCATEGORIES: (id) => `${BASE_URL}/api/category/${id}`,
 };

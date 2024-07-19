@@ -14,16 +14,16 @@ class navbarnih extends HTMLElement {
         <button tabindex="0" aria-label="Toggle Button" id="hamburgerButton">☰</button>
       </div>
       <nav id="navigationDrawer" class="app-bar__navigation">
-        <ul>
+        <ul class="gap-3">
           <li><a tabindex="0" href="#/">Beranda</a></li>
           <li class="nav-item dropdown">
             <a tabindex="0" href="#" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-layanan">Layanan <i class="bi bi-caret-down-fill"></i></a>
             <ul class="dropdown-content" id="submenu-layanan" role="menu" aria-labelledby="submenu-layanan">
               <li role="menuitem"><a tabindex="0" href="#/artikel">Artikel</a></li>
               <li role="menuitem"><a tabindex="0" href="#/quiz">Quiz</a></li>
-              <li role="menuitem"><a tabindex="0" href="#/kalkulator">Kalkulator Gizi</a></li>
-              <li role="menuitem"><a tabindex="0" href="#/mpasi">Mpasi</a></li>
-              <li role="menuitem"><a tabindex="0" href="#/konsultasi">Konsultasi</a></li>
+              <li role="menuitem"><a tabindex="0" href="#/bmi">IMTIK</a></li>
+              <li role="menuitem"><a tabindex="0" href="#/gemasi">GEMASI</a></li>
+              <li role="menuitem"><a tabindex="0" href="#/penting">INFO PENTING</a></li>
             </ul>
           </li>
           <li><a tabindex="0" href="#/tentangkami">Tentang</a></li>

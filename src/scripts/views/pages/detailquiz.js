@@ -1,5 +1,5 @@
-/* eslint-disable radix */
 /* eslint-disable max-len */
+/* eslint-disable radix */
 import UrlParser from '../../routes/url-parser';
 import QuizSource from '../../data/quiz-source';
 import { createQuizDetailTemplate } from '../templates/template-creator';
