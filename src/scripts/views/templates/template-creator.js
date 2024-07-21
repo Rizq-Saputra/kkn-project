@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable indent */
 const formatTanggal = (tanggal) => {
   const options = {
@@ -341,6 +342,30 @@ const createMpasiTemplate = (mpasi) => `
 
 `;
 
+// const createArtikelTemplate = (artikel) => `
+// <style>
+// .card {
+//   transition: transform 0.5s;
+//   }
+
+//   .card:hover {
+//     transform: scale(1.05);
+//     }
+// </style>
+
+// <div class="col-lg-4 col-md-6 col-sm-12 mb-4 arikel-pages">
+//   <a tabindex="0" href="#/artikel/${artikel.id}" style="text-decoration: none;">
+//     <div class="card h-100">
+//       <img data-src="${artikel.gambar}" class="card-img-top artikel-img lazyload" alt="${artikel.judul}">
+//       <div class="card-body d-flex flex-column">
+//         <h4 tabindex="-1" class="card-title list_item_title artikel-pages-name text-dark text-capitalize text-center mb-4 fw-bold" style="margin-bottom: auto; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; margin-bottom: 0;" tabindex="0">${artikel.judul}</h4>
+//         <p class="artikel-deskripsi" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; margin-bottom: 0;">${artikel.deskripsi}</p>
+//         <p tabindex="0" class="card-text arikel-pages-desc text-muted text-center mt-auto">${formatTanggal(artikel.tanggal)}</p>
+//       </div>
+//     </div>
+//   </a>
+// </div>
+// `;
 const createArtikelTemplate = (artikel) => `
 <style>
 .card {
@@ -353,7 +378,7 @@ const createArtikelTemplate = (artikel) => `
 </style>
 
 <div class="col-lg-4 col-md-6 col-sm-12 mb-4 arikel-pages">
-  <a tabindex="0" href="#/artikel/${artikel.id}" style="text-decoration: none;">
+  <a tabindex="0" href="${artikel.sumber}" style="text-decoration: none;">
     <div class="card h-100">
       <img data-src="${artikel.gambar}" class="card-img-top artikel-img lazyload" alt="${artikel.judul}">
       <div class="card-body d-flex flex-column">

@@ -8,7 +8,7 @@ const KalkulatorBMI = {
     return `
       <div class="container mt-5 d-flex justify-content-center align-items-center kalkulator" style="height: 80vh;">
         <form class="needs-validation" action="">
-          <h1 tabindex="0" class="text-center fw-bold">Kalkulator BMI</h1>
+          <h1 tabindex="0" class="text-center purple fw-bold">Kalkulator IMT (Indeks Massa Tubuh)</h1>
           <div class="radio-tile-group d-flex justify-content-center flex-wrap">
             <div class="input-container">
               <input tabindex="0" id="gender1" type="radio" value="wanita" name="radio" required/>
@@ -154,51 +154,58 @@ const KalkulatorBMI = {
     }
 
     function determineBMICategory(bmi) {
-      if (bmi < 18.5) return 'Underweight';
-      if (bmi >= 18.5 && bmi < 24.9) return 'Normal weight';
-      if (bmi >= 24.9 && bmi < 29.9) return 'Overweight';
-      return 'Obesity';
+      if (bmi < 17) return 'Sangat Kurus';
+      if (bmi >= 17 && bmi < 18.5) return 'Kurus';
+      if (bmi >= 18.5 && bmi < 25) return 'Normal';
+      if (bmi >= 25 && bmi < 30) return 'Gemuk';
+      return 'Obesitas';
     }
 
     function displayResult(bmi, category, age, gender) {
       const resultDiv = document.getElementById('result');
 
       let bmiClass = '';
-      if (bmi < 18.5) {
-        bmiClass = 'underweight';
+      if (bmi < 17) {
+        bmiClass = 'sangatkurus';
+      } else if (bmi >= 17 && bmi < 18.5) {
+        bmiClass = 'kurus';
       } else if (bmi >= 18.5 && bmi < 25) {
-        bmiClass = 'healthy';
+        bmiClass = 'normal';
       } else if (bmi >= 25 && bmi < 30) {
-        bmiClass = 'overweight';
+        bmiClass = 'gemuk';
       } else {
-        bmiClass = 'obese';
+        bmiClass = 'obesitas';
       }
 
       resultDiv.innerHTML = `
       <div class="flex">
         <section class="output">
-          <h3>Your BMI is</h3>
-          <p id="bmi" class="bmi-score ${bmiClass}">${bmi.toFixed(2)}</p>
-          <p id="desc" class="${bmiClass}"><strong>${category}</strong></p>
           <p>Usia: ${age} tahun</p>
           <p>Jenis Kelamin: ${gender === 'pria' ? 'Pria' : 'Wanita'}</p>
+          <h3>Pengukuran IMT Kamu Adalah</h3>
+          <p id="bmi" class="bmi-score ${bmiClass}">${bmi.toFixed(2)}</p>
+          <p id="desc" class="${bmiClass}"><strong>${category}</strong></p>
         </section>
         
         <section class="bmi-scale mt-4">
-          <div class="underweight">
-            <h4>Underweight</h4>
-            <p>&lt; 18.5</p>
+          <div class="sangatkurus">
+            <h4>Sangat Kurus</h4>
+            <p>&lt; 17</p>
           </div>
-          <div class="healthy">
+          <div class="kurus">
+            <h4>Kurus</h4>
+            <p style="text-wrap: nowrap;">17 - 18.5</p>
+          </div>
+          <div class="normal">
             <h4>Normal</h4>
             <p style="text-wrap: nowrap;">18.5 – 25</p>
           </div>
-          <div class="overweight">
-            <h4>Overweight</h4>
-            <p>25 – 30</p>
+          <div class="gemuk">
+            <h4>Gemuk</h4>
+            <p style="text-wrap: nowrap;">25 – 30</p>
           </div>
-          <div class="obese">
-            <h4>Obese</h4>
+          <div class="obesitas">
+            <h4>Obesitas</h4>
             <p>≥ 30</p>
           </div>
         </section>

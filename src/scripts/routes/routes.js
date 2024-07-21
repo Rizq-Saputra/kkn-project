@@ -10,16 +10,20 @@ import DetailMpasi from '../views/pages/detailmpasi';
 import DetailQuiz from '../views/pages/detailquiz';
 import StartQuiz from '../views/pages/start-quiz';
 import KalkulatorBMI from '../views/pages/bmi';
+import penting from '../views/pages/penting';
+import gemasi from '../views/pages/gemasi';
 
 const routes = {
   '/': Home,
   '/artikel': Artikel,
   '/kalkulator': Kalkulator,
+  '/gemasi': gemasi,
   '/bmi': KalkulatorBMI,
   '/mpasi': Mpasi,
   '/konsultasi': konsultasi,
   '/tentangkami': AboutUs,
   '/quiz': Quiz,
+  '/penting': penting,
   '/start-quiz': StartQuiz,
   '/quiz/:id': DetailQuiz,
   '/artikel/:id': DetailArtikel,

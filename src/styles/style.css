@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 body {
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: "Mochiy Pop One", Arial, sans-serif;
 }
 
 /* *[tabindex="0"]:focus {
@@ -29,10 +29,11 @@ body {
 }
 
 :root {
-  --underweight: orange;
+  --sangatkurus: yellow;
+  --kurus: orange;
   --normal: green;
-  --overweight: lightcoral;
-  --obese: crimson;
+  --gemuk: lightcoral;
+  --obesitas: crimson;
 }
 
 .output {
@@ -63,24 +64,33 @@ body {
   color: slategray;
 }
 
-.underweight {
-  border-top: 5px solid var(--underweight);
-  color: var(--underweight);
+.sangatkurus {
+  border-top: 5px solid var(--sangatkurus);
+  color: var(--sangatkurus);
+}
+.kurus {
+  border-top: 5px solid var(--kurus);
+  color: var(--kurus);
 }
 
-.healthy {
+.normal {
   border-top: 5px solid var(--normal);
   color: var(--normal);
 }
 
-.overweight {
-  border-top: 5px solid var(--overweight);
-  color: var(--overweight);
+.gemuk {
+  border-top: 5px solid var(--gemuk);
+  color: var(--gemuk);
 }
 
-.obese {
-  border-top: 5px solid var(--obese);
-  color: var(--obese);
+.obesitas {
+  border-top: 5px solid var(--obesitas);
+  color: var(--obesitas);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
 }
 
 

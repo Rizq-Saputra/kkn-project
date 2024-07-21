@@ -187,4 +187,21 @@
   .kalkulator {
     margin-top: 3rem;
   }
+  .output #bmi {
+    font-size: 2.5rem;
+  }
+
+  .bmi-scale h4 {
+    font-size: 0.5rem;
+  }
+
+  .bmi-scale div {
+    padding: 5px;
+  }
+
+  .output p,
+  .output h3,
+  .output #desc {
+    font-size: 0.9rem;
+  }
 }
