@@ -12,6 +12,12 @@ body {
   color: #66D1FF;
 }
 
+.resulthasil{
+  color: #66D1FF;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
 .purple{
   color: #FF00A8;
 }
@@ -91,6 +97,20 @@ body {
 .card-img-top {
   height: 200px;
   object-fit: cover;
+}
+
+.timer-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF00A8; /* Warna merah untuk menarik perhatian */
+  text-shadow: 2px 2px 4px #000000; /* Tambahkan bayangan untuk membuat teks lebih terlihat */
+  animation: blink-animation 1s steps(5, start) infinite; /* Animasi berkedip */
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }
 
 

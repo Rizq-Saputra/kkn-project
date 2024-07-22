@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-undef */
 /* eslint-disable consistent-return */
 /* eslint-disable no-alert */
@@ -43,7 +44,20 @@ class QuizSource {
   static async getAllQuizzes() {
     try {
       const response = await fetch(API_ENDPOINT.QUIZ);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const responseJson = await response.json();
+
+      responseJson.data.forEach((quiz) => {
+        try {
+          quiz.jawaban = JSON.parse(quiz.jawaban);
+        } catch (e) {
+          console.error('Error parsing jawaban:', e);
+          quiz.jawaban = [];
+        }
+      });
+
       return responseJson.data;
     } catch (error) {
       console.error('Failed to fetch all quizzes:', error);

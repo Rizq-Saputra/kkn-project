@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable max-len */
 /* eslint-disable no-use-before-define */
 import QuizSource from '../../data/quiz-source';
@@ -7,7 +8,7 @@ const StartQuiz = {
   async render() {
     return `
       <div class="container mt-4">
-        <h2 tabindex="0" class="fw-bold" style="text-align: center;">Quiz Question</h2>
+        <h2 tabindex="0" class="fw-bold" style="text-align: center;">Kuis</h2>
         <div id="quizStatus" class="mt-2" style="text-align: center;"></div>
         <div id="quizTimer" class="mt-2" style="text-align: center;"></div>
         <div id="quizQuestion" class="mt-4 justify-content-center d-flex"></div>
@@ -28,21 +29,34 @@ const StartQuiz = {
     let currentQuestion = 0;
     const answeredQuestions = new Map();
     const questions = [];
-    const displayedQuestions = []; // Array to store displayed questions
-    // Timer setup
+    const displayedQuestions = new Set();
     const totalTime = 5 * 30;
     let timeLeft = totalTime;
-
-    const quizMusic = new Audio('../music/quiz.mp3');
 
     const fetchAndDisplayRandomQuestions = async () => {
       try {
         const quizzes = await QuizSource.getAllQuizzes();
+        if (!quizzes || quizzes.length === 0) {
+          throw new Error('No quizzes found');
+        }
+        quizzes.forEach((quiz) => {
+          if (!Array.isArray(quiz.jawaban)) {
+            try {
+              quiz.jawaban = JSON.parse(quiz.jawaban);
+            } catch (e) {
+              console.error('Error parsing jawaban:', e);
+              quiz.jawaban = [];
+            }
+          }
+        });
+
         questions.push(...quizzes);
         questions.sort(() => Math.random() - 0.5);
+        questions.length = totalQuestions;
+        console.log('Shuffled and sliced questions:', questions);
         fetchAndDisplayQuestion();
-        quizMusic.play();
       } catch (error) {
+        console.error('Error in fetchAndDisplayRandomQuestions:', error);
         quizQuestionContainer.innerHTML = '<p>Error loading quiz question. Please try again later.</p>';
       }
     };
@@ -50,8 +64,10 @@ const StartQuiz = {
     const fetchAndDisplayQuestion = () => {
       if (currentQuestion < totalQuestions) {
         const quiz = questions[currentQuestion];
-        displayedQuestions.push(quiz); // Add the current question to the displayed questions
-        quizStatusContainer.innerHTML = `<p>Question ${currentQuestion + 1}/${totalQuestions}</p>`;
+        if (!displayedQuestions.has(quiz.id)) {
+          displayedQuestions.add(quiz.id);
+        }
+        quizStatusContainer.innerHTML = `<p>Pertanyaan ${currentQuestion + 1}/${totalQuestions}</p>`;
         quizQuestionContainer.innerHTML = createQuizDetailTemplate(quiz, currentQuestion + 1, totalQuestions);
 
         document.querySelector('.next-question').addEventListener('click', nextQuestion);
@@ -97,8 +113,6 @@ const StartQuiz = {
     const endQuiz = () => {
       submitButton.disabled = true;
       quizStatusContainer.innerHTML = '';
-      quizMusic.pause(); // Stop the music when the quiz ends
-      quizMusic.currentTime = 0; // Reset the music to the beginning
       let score = 0;
       answeredQuestions.forEach((value) => {
         if (value.isCorrect) {
@@ -119,15 +133,16 @@ const StartQuiz = {
         imageUrl = '../images/tryagain.png';
       }
 
-      const quizResults = displayedQuestions.map((quiz, index) => {
+      const quizResults = Array.from(displayedQuestions).map((quizId, index) => {
+        const quiz = questions.find((q) => q.id === quizId);
         const userAnswer = answeredQuestions.get(quiz.id)?.answer || 'No answer';
         const correctAnswer = quiz.jawabanBenar;
         const isCorrect = userAnswer === correctAnswer;
         return `
           <div class="quiz-result-card card p-3 my-3 ${isCorrect ? 'border-success' : 'border-danger'}">
-            <h4>Question ${index + 1}: ${quiz.soal}</h4>
-            <p>Your answer: <span class="${isCorrect ? 'text-success' : 'text-danger'}">${userAnswer}</span></p>
-            <p>Correct answer: <span class="text-success">${correctAnswer}</span></p>
+            <h4>Pertanyaan ${index + 1}: ${quiz.soal}</h4>
+            <p>Jawaban Kamu: <span class="${isCorrect ? 'text-success' : 'text-danger'}">${userAnswer}</span></p>
+            <p>Jawaban Benar: <span class="text-success">${correctAnswer}</span></p>
           </div>
         `;
       }).join('');
@@ -156,14 +171,14 @@ const StartQuiz = {
       quizQuestionContainer.innerHTML = `
         <div style="text-align: center;">
           <img src="${imageUrl}" alt="" style="display: block; margin: 0 auto;">
-          <p>Time's up! You have completed the quiz.</p>
-          <p>Your score: ${score} out of ${totalQuestions}</p>
-          <p>${message}</p>
+          <p>Waktu Habis! Kamu Sudah Menyelesaikan Kuis.</p>
+          <p>Skor Kamu: ${score} Dari ${totalQuestions}</p>
+          <p class="resulthasil">${message}</p>
           ${quizResults}
         </div>
       `;
 
-      backButtonContainer.innerHTML = '<button id="backButton" class="btn btn-custom mt-4 mb-4">Back to Quiz</button>';
+      backButtonContainer.innerHTML = '<button id="backButton" class="btn btn-custom mt-4 mb-4">Kembali</button>';
 
       const backButton = document.querySelector('#backButton');
       if (backButton) {
@@ -179,12 +194,11 @@ const StartQuiz = {
       } else {
         const minutes = Math.floor(timeLeft / 60);
         const seconds = timeLeft % 60;
-        quizTimerContainer.innerHTML = `<p>Time left: ${minutes}:${seconds < 10 ? `0${seconds}` : seconds}</p>`;
+        quizTimerContainer.innerHTML = `<p class="timer-text">Sisa Waktu: ${minutes}:${seconds < 10 ? `0${seconds}` : seconds}</p>`;
         timeLeft -= 1;
       }
     };
 
-    // Start the timer
     const timerInterval = setInterval(updateTimer, 1000);
     updateTimer();
 

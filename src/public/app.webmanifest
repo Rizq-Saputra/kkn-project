@@ -2,7 +2,7 @@
   "name": "StuntCare",
   "short_name": "StuntCare",
   "description": "Educational Applications for Toddler Nutrition to Prevent Stunting",
-  "theme_color": "#019973",
+  "theme_color": "#66D1FF",
   "background_color": "#fff",
   "display": "standalone",
   "orientation": "portrait",

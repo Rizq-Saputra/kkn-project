@@ -56,8 +56,9 @@ export const createQuizItemTemplate = (category) => `
 export const createQuizDetailTemplate = (quiz, currentQuestion, totalQuestions) => `
   <div class="d-flex justify-content-center align-items-center mb-4" style="width: 100vw;">
     <div class="quiz-item card p-3 shadow" style="max-width: 1000px; width: 100%;">
+      ${quiz.gambar ? `<img src="${quiz.gambar}" alt="Quiz Image" class="img-fluid mb-3" style="max-height: 300px; object-fit: cover;">` : ''}
       <h3 class="quiz-question card-title" style="font-size: 1.25rem;">${quiz.soal}</h3>
-      <p class="text-muted">Question ${currentQuestion} of ${totalQuestions}</p>
+      <p class="text-muted">Pertanyaan ${currentQuestion} of ${totalQuestions}</p>
       <div class="quiz-answers row" style="display: flex; flex-wrap: wrap;">
         ${quiz.jawaban.map((answer, index) => `
           <div class="col-6 my-2 d-flex align-items-stretch">
@@ -72,8 +73,8 @@ export const createQuizDetailTemplate = (quiz, currentQuestion, totalQuestions) 
         `).join('')}
       </div>
       <div class="d-flex justify-content-between mt-3">
-        <button class="btn btn-secondary prev-question" ${currentQuestion === 1 ? 'disabled' : ''}>Previous</button>
-        <button class="btn btn-custom next-question">Next</button>
+        <button class="btn btn-custom prev-question" ${currentQuestion === 1 ? 'disabled' : ''}>Sebelumnya</button>
+        <button class="btn btn-custom next-question">Selanjutnya</button>
       </div>
     </div>
   </div>

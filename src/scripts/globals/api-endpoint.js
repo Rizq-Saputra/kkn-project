@@ -1,4 +1,5 @@
-const BASE_URL = 'http://localhost:3000';
+// const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://api.siemahat.com';
 // const BASE_URL = 'https://api.stuntcare.my.id';
 // const BASE_URL = "https://stuntcare.cleverapps.io";
 
