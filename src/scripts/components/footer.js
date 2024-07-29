@@ -4,29 +4,19 @@ class FooterElement extends HTMLElement {
     super();
 
     this.innerHTML = `
-       <footer class="mt-5 bg-custom px-4 py-5">
+       <footer class="mt-5 bg-footer px-4 py-4">
     <div class="container text-center">
-      <p class="font-weight-bold text-secondary_purple" style="font-size: 1.25rem; white-space: nowrap;">
-        Created By Rizq Saputra
+    <img src="../images/unmul.png" alt="Logo KKN" class="mb-4" style="width: 85px;" />
+    <img src="../images/kkn.png" alt="Logo KKN" class="mb-4" style="width: 75px;" />
+    <img src="../images/kknlogo.png" alt="Logo KKN Tematik Stunting 02" class="mb-4" style="width: 60px;" />
+      <p class="font-weight-bold text-white" style="font-size: 1rem; white-space: nowrap;">
+        KKN TEMATIK STUNTING 02
       </p>
-      <ul class="list-unstyled d-flex justify-content-center text-white mt-3">
-        <li class="mx-2">
-          <a href="#" class="text-decoration-none text-white">Home</a>
-        </li>
-        <li class="mx-2">
-          <a href="#" class="text-decoration-none text-white">About</a>
-        </li>
-        <li class="mx-2">
-          <a href="#" class="text-decoration-none text-white">Project</a>
-        </li>
-        <li class="mx-2">
-          <a href="#" class="text-decoration-none text-white">Blog</a>
-        </li>
-      </ul>
+      <p class="text-white hastag"># Generasi Muda Sehat, Tanpa Stunting</p>
       <ul class="list-unstyled d-flex justify-content-center text-white mt-4">
         <li class="mx-2">
           <a
-            href="https://www.instagram.com/rizqsptr/"
+            href="https://www.instagram.com/kkn50.benuapuhun/"
             target="_blank"
             aria-label="Instagram"
             class="icon-circle"
@@ -36,27 +26,17 @@ class FooterElement extends HTMLElement {
         </li>
         <li class="mx-2">
           <a
-            href="https://www.linkedin.com/in/muhammad-rizq-saputra-378088281/"
+            href="https://www.tiktok.com/@kkn50.benuapuhun"
             target="_blank"
-            aria-label="LinkedIn"
+            aria-label="Tiktok"
             class="icon-circle"
           >
-            <i class="fab fa-linkedin"></i>
+            <i class="fa-brands fa-tiktok"></i>
           </a>
         </li>
         <li class="mx-2">
           <a
-            href="https://github.com/Rizq-Saputra"
-            target="_blank"
-            aria-label="GitHub"
-            class="icon-circle"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-        <li class="mx-2">
-          <a
-            href="mailto:rizky002211@gmail.com"
+            href="mailto:kkn50tematikstunting02@gmail.com"
             target="_blank"
             aria-label="Email"
             class="icon-circle"

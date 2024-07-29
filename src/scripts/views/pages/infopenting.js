@@ -7,7 +7,7 @@ import {
   createSkeletonArtikelItemTemplate,
 } from '../templates/template-creator';
 
-const penting = {
+const infopenting = {
   async render() {
     return `
       <h1 tabindex="0" class="fw-bold purple mt-4" style="text-align: center;">INFO PENTING ! (Informasi Pencegahan Stunting)</h1>
@@ -121,4 +121,4 @@ const renderPagination = (pages) => {
   }
 };
 
-export default penting;
+export default infopenting;

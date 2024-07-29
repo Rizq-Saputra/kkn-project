@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
@@ -24,6 +25,7 @@ module.exports = {
           {
             loader: 'css-loader',
           },
+          MiniCssExtractPlugin.loader, 'css-loader',
         ],
       },
     ],
@@ -47,13 +49,16 @@ module.exports = {
       swDest: 'sw.bundle.js',
       runtimeCaching: [
         {
-          urlPattern: ({ url }) => url.href.startsWith('https://api.stuntcare.my.id'),
+          urlPattern: ({ url }) => url.href.startsWith('https://api.siemahat.com'),
           handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: 'stuntcare-api',
+            cacheName: 'siemahat-api',
           },
         },
       ],
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].styles.css',
     }),
   ],
 };

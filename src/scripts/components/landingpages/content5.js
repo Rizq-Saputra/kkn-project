@@ -3,18 +3,15 @@ class content5 extends HTMLElement {
     super();
 
     this.innerHTML = `
-    <section id="content5" class="content5 bg-gray">
-      <div class="container">
-        <div class="row text-center justify-content-center">
-          <div class="col-12 col-md-8 col-lg-7 tester">
-            <p tabindex="0" class="h2 fw-bold">Silahkan Periksa <span class="text-warning">Gizi Balita</span> Anda Sekarang</p>
-            <p tabindex="0" class="lead deskripsi">Dapatkan informasi penting tentang kesehatan dan nutrisi anak Anda<br> untuk memastikan tumbuh kembang yang optimal dengan mengklik tombol di bawah ini.</p>
-            <a tabindex="0" aria-label="tombol Periksa Gizi" href="#/kalkulator" class="btn btn-warning text-white align-content-center">Periksa Gizi</a>
-          </div>
+      <section id="content5" class="content5 bg-gray mt-5 mb-4">
+        <h1 tabindex="0" class="text-center fw-bold" >
+          <span class="text-utama">Booklet</span>
+        </h1>
+         <div class="flipbook-container mt-4">
+          <iframe src="https://online.flippingbook.com/view/735578603/" width="100%" height="600px" style="border:none;" allowfullscreen></iframe>
         </div>
-      </div>
-    </section>
-      `;
+      </section>
+    `;
   }
 }
 

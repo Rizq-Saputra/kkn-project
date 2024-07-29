@@ -123,14 +123,14 @@ const StartQuiz = {
       let message = '';
       let imageUrl = '';
       if (score === totalQuestions) {
-        message = 'Great job!';
-        imageUrl = '../images/good.png';
+        message = 'Great job !';
+        imageUrl = '../images/GREAT.png';
       } else if (score >= 3) {
-        message = 'Nice!';
-        imageUrl = '../images/nice.png';
+        message = 'Good Job !';
+        imageUrl = '../images/GOOD.png';
       } else {
         message = 'Try again!';
-        imageUrl = '../images/tryagain.png';
+        imageUrl = '../images/TRY AGAIN.png';
       }
 
       const quizResults = Array.from(displayedQuestions).map((quizId, index) => {
@@ -170,7 +170,7 @@ const StartQuiz = {
 
       quizQuestionContainer.innerHTML = `
         <div style="text-align: center;">
-          <img src="${imageUrl}" alt="" style="display: block; margin: 0 auto;">
+          <img class="quizg" src="${imageUrl}" alt="" style="display: block; margin: 0 auto; ">
           <p>Waktu Habis! Kamu Sudah Menyelesaikan Kuis.</p>
           <p>Skor Kamu: ${score} Dari ${totalQuestions}</p>
           <p class="resulthasil">${message}</p>
@@ -183,7 +183,7 @@ const StartQuiz = {
       const backButton = document.querySelector('#backButton');
       if (backButton) {
         backButton.addEventListener('click', () => {
-          window.location.hash = '#/quiz';
+          window.location.hash = '#/kemas';
         });
       }
     };

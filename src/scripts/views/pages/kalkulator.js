@@ -229,7 +229,7 @@ const Kalkulator = {
           'Berat badan anak sudah sesuai.',
         heightRecommendation:
           'Tinggi badan anak sudah sesuai.',
-        gambar: '../images/Gizi-baik.webp',
+        gambar: '.. ',
       };
     }
 

@@ -4,11 +4,11 @@ body {
   font-family: "Mochiy Pop One", Arial, sans-serif;
 }
 
-/* *[tabindex="0"]:focus {
-  outline: 4px dashed #ffca2c;
-} */
-
 .ijonih {
+  color: #66D1FF;
+}
+
+.text-utama{
   color: #66D1FF;
 }
 
@@ -19,11 +19,14 @@ body {
 }
 
 .purple{
-  color: #FF00A8;
+  color: #2B3687;
 }
 
 .bg-purple{
-  background-color: #FF00A8;
+  background-color: #2B3687;
+}
+.bg-purple:hover{
+  background-color: #b9097e;
 }
 
 .salsa-font {
@@ -102,9 +105,9 @@ body {
 .timer-text {
   font-size: 24px;
   font-weight: bold;
-  color: #FF00A8; /* Warna merah untuk menarik perhatian */
-  text-shadow: 2px 2px 4px #000000; /* Tambahkan bayangan untuk membuat teks lebih terlihat */
-  animation: blink-animation 1s steps(5, start) infinite; /* Animasi berkedip */
+  color: #2B3687;
+  text-shadow: 2px 2px 4px #000000;
+  animation: blink-animation 1s steps(5, start) infinite;
 }
 
 @keyframes blink-animation {
@@ -184,7 +187,7 @@ input,
 .app-bar .app-bar__brand a {
   color: #faf7f7;
   text-transform: uppercase;
-  font-size: 1.8rem;
+  font-size: 1rem;
   font-weight: bold;
   user-select: none;
 }
@@ -227,7 +230,7 @@ input,
 
 .app-bar .app-bar__navigation ul li a:hover,
 .app-bar .app-bar__navigation ul li a:focus {
-  color: #FF00A8;
+  color: #2B3687;
 }
 
 .app-bar .app-bar__navigation ul li .dropdown-content {
@@ -249,7 +252,7 @@ input,
 
 .app-bar .app-bar__navigation ul li .dropdown-content a:hover,
 .app-bar .app-bar__navigation ul li .dropdown-content a:focus {
-  background-color: #FF00A8;
+  background-color: #2B3687;
   color: #faf7f7;
 }
 
@@ -284,7 +287,8 @@ input,
   color: white;
 }
 .image__1 {
-  margin-bottom: 130px;
+  margin-bottom: 50px;
+  margin-top: 70px;
 }
 .heading-title {
   margin-bottom: 40px;
@@ -348,18 +352,7 @@ input,
   margin-top: 15px;
 }
 
-.content5 {
-  height: 40vh;
-}
-.content5 .tester {
-  background-image: url("../public/images/periksa_gizi.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  height: 50vh;
-  padding-top: 2rem;
-  width: 100%;
-}
+
 
 .content6 .card-title {
   font-size: 20px;
@@ -432,7 +425,7 @@ input:checked + .radio-tile label {
 }
 
 .btn-custom:hover {
-  background-color: #FF00A8 !important;
+  background-color: #2B3687 !important;
   color: #e0f7f4 !important;
 }
 
@@ -605,6 +598,10 @@ input:checked + .radio-tile2 label {
   FOOTER
 */
 
+.bg-footer{
+  background-color: #66D1FF;
+}
+
 .footer {
   background-color: #66D1FF;
   color: #fff;
@@ -677,7 +674,7 @@ input:checked + .radio-tile2 label {
   z-index: 1000;
   border: none; 
   outline: none; 
-  background-color: #FF00A8; 
+  background-color: #2B3687; 
   color: white;
   cursor: pointer;
   padding: 7px;
@@ -690,15 +687,30 @@ input:checked + .radio-tile2 label {
 }
 
 .bg-custom {
-  background-color: #1D1B24;
+  background-color: #2B3687;
 }
+
 .text-secondary_purple {
-  color: #6C63FF;
+  color: #66D1FF;
 }
+
+.bw {
+  filter: grayscale(100%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.colored {
+  filter: grayscale(0%);
+}
+
+.enlarged {
+  transform: scale(1.1);
+}
+
 .icon-circle {
   width: 40px;
   height: 40px;
-  background-color: #6C63FF;
+  background-color: #2B3687;
   color: #fff;
   display: flex;
   align-items: center;
@@ -706,7 +718,80 @@ input:checked + .radio-tile2 label {
   border-radius: 50%;
   transition: all 0.5s ease-in-out;
 }
+
 .icon-circle:hover {
   background-color: #fff;
   color: #0e0e0e;
+}
+
+.hastag {
+  color: white;
+  font-size: 16px;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .hastag {
+    font-style: italic;
+    font-size: 12px;
+  }
+}
+
+.custom-carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  height: auto;
+}
+
+.custom-carousel .carousel-item {
+  height: 50vh;
+}
+
+.custom-carousel-image {
+  object-fit: cover;
+  height: 100%;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h5,
+  .carousel-caption p {
+    font-size: 14px;
+  }
+
+  .custom-carousel .carousel-item {
+    height: 30vh;
+  }
+}
+
+.hover-shake {
+  transition: transform 0.3s;
+}
+
+.hover-shake:hover {
+  animation: shake 0.3s ease-in-out infinite;
+}
+
+.hover-shake-permanen{
+  animation: shake 0.05s ease-in-out infinite;
+}
+.merah{
+  background-color: #db0000;
+}
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
 }

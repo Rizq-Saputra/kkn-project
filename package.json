@@ -1,5 +1,5 @@
 {
-  "name": "stuntcare",
+  "name": "siemahat",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,7 +13,7 @@
     "test:watch": "jest --watchAll"
   },
   "keywords": [],
-  "author": "your_name <your.email@domain.com>",
+  "author": "Muhammad Rizq SAputra rizky002211@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.24.5",

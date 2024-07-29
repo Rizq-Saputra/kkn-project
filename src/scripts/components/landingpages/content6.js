@@ -6,7 +6,7 @@ class content6 extends HTMLElement {
     <section id="content6" class="content6 mt-4">
       <div class="container">
         <h1 tabindex="0" class="text-center fw-bold" >
-          Layanan <span class="text-warning">StuntCare</span>
+          Layanan <span class="text-utama">SIE Mahat</span>
         </h1>
         <div class="row justify-content-center">
           <div
@@ -19,8 +19,8 @@ class content6 extends HTMLElement {
               alt="artikel icon"
             />
             <div class="card-body">
-              <h2 tabindex="0" class="card-title">Artikel</h2>
-              <a tabindex="0" class="btn btn-outline-warning fw-bold mt-3 align-content-center" style="font-size: 14px" href="#/Artikel">Lihat Selengkapnya</a>
+              <h2 tabindex="0" class="card-title">INFO PENTING</h2>
+              <a tabindex="0" class="btn btn-custom fw-bold mt-3 align-content-center" style="font-size: 14px" href="#/infopenting">Lihat Selengkapnya</a>
             </div>
           </div>
 
@@ -34,8 +34,8 @@ class content6 extends HTMLElement {
               alt="kalkulator icon"
             />
             <div class="card-body">
-              <h2 tabindex="0" class="card-title">Kalkulator Gizi</h2>
-              <a tabindex="0" class="btn btn-outline-warning fw-bold mt-3 align-content-center" style="font-size: 14px" href="#/kalkulator">Lihat Selengkapnya</a>
+              <h2 tabindex="0" class="card-title">Kalkulator IMTIK</h2>
+              <a tabindex="0" class="btn btn-custom fw-bold mt-3 align-content-center" style="font-size: 14px" href="#/imtik">Lihat Selengkapnya</a>
             </div>
           </div>
 
@@ -44,13 +44,27 @@ class content6 extends HTMLElement {
             >
             <img
               tabindex="0"
-              src="../images/icon makanan.png"
+              src="../images/kemas.png"
               class="card-img-top p-3 mx-auto d-block"
               alt="makanan icon"
             />
             <div class="card-body">
-              <h2 tabindex="0" class="card-title">MPASI</h2>
-              <a tabindex="0" class="btn btn-outline-warning fw-bold mt-3 align-content-center" style="font-size: 14px" href="#/mpasi">Lihat Selengkapnya</a>
+              <h2 tabindex="0" class="card-title">KEMAS</h2>
+              <a tabindex="0" class="btn btn-custom fw-bold mt-3 align-content-center" style="font-size: 14px" href="#/kemas">Lihat Selengkapnya</a>
+            </div>
+          </div>
+          <div
+            class="shadow p-3 mb-5 content6-card m-2 mx-4 text-center"
+            >
+            <img
+              tabindex="0"
+              src="../images/gemasi.png"
+              class="card-img-top p-3 mx-auto d-block"
+              alt="makanan icon"
+            />
+            <div class="card-body">
+              <h2 tabindex="0" class="card-title">GEMASI</h2>
+              <a tabindex="0" class="btn btn-custom fw-bold mt-3 align-content-center" style="font-size: 14px" href="#/gemasi">Lihat Selengkapnya</a>
             </div>
           </div>
         </div>

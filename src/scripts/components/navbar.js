@@ -8,7 +8,9 @@ class navbarnih extends HTMLElement {
     this.innerHTML = `
     <header class="app-bar">
       <div class="app-bar__brand">
-        <a tabindex="0" href="#/"><img src="../images/Logo.png" height="30" alt="Logo Stuntcare" /></a>
+        <a tabindex="0" href="#/"><img src="../images/siemahat.png" height="30" alt="siemahat" style="
+    height: 55px;
+" />SIE Mahat</a>
       </div>
       <div class="app-bar__menu">
         <button tabindex="0" aria-label="Toggle Button" id="hamburgerButton">☰</button>
@@ -19,10 +21,10 @@ class navbarnih extends HTMLElement {
           <li class="nav-item dropdown">
             <a tabindex="0" href="#" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-layanan">Layanan <i class="bi bi-caret-down-fill"></i></a>
             <ul class="dropdown-content" id="submenu-layanan" role="menu" aria-labelledby="submenu-layanan">
-              <li role="menuitem"><a tabindex="0" href="#/quiz">KEMAS</a></li>
-              <li role="menuitem"><a tabindex="0" href="#/bmi">IMTIK</a></li>
+              <li role="menuitem"><a tabindex="0" href="#/kemas">KEMAS</a></li>
+              <li role="menuitem"><a tabindex="0" href="#/imtik">IMTIK</a></li>
               <li role="menuitem"><a tabindex="0" href="#/gemasi">GEMASI</a></li>
-              <li role="menuitem"><a tabindex="0" href="#/penting">INFO PENTING</a></li>
+              <li role="menuitem"><a tabindex="0" href="#/infopenting">INFO PENTING</a></li>
             </ul>
           </li>
           <li><a tabindex="0" href="#/tentangkami">Tentang</a></li>
