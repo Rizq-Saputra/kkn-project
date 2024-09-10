@@ -7,8 +7,8 @@ class FooterElement extends HTMLElement {
        <footer class="mt-5 bg-footer px-4 py-4">
     <div class="container text-center">
     <img src="../images/unmul.png" alt="Logo KKN" class="mb-4" style="width: 85px;" />
-    <img src="../images/kkn.png" alt="Logo KKN" class="mb-4" style="width: 75px;" />
-    <img src="../images/kknlogo.png" alt="Logo KKN Tematik Stunting 02" class="mb-4" style="width: 60px;" />
+    <img src="../images/kkn.png" alt="Logo KKN" class="mb-4" style="width: 75px; margin-top: 7px;"/>
+    <img src="../images/kknlogo.png" alt="Logo KKN Tematik Stunting 02" class="mb-4" style="width: 60px;"/>
       <p class="font-weight-bold text-white" style="font-size: 1rem; white-space: nowrap;">
         KKN TEMATIK STUNTING 02
       </p>

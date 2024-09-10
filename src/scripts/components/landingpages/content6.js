@@ -14,7 +14,7 @@ class content6 extends HTMLElement {
           >
             <img
               tabindex="0"
-              src="../images/icon artikel.png"
+              src="../images/info.png"
               class="card-img-top p-3 mx-auto d-block"
               alt="artikel icon"
             />

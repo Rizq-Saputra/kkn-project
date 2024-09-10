@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable radix */
 /* eslint-disable no-undef */
 /* eslint-disable no-use-before-define */
@@ -6,21 +7,28 @@ import '../../components/loader';
 const Imtik = {
   async render() {
     return `
-      <div class="container mt-5 d-flex justify-content-center align-items-center kalkulator" style="height: 80vh;">
+      <div class="container mt-5 d-flex justify-content-center align-items-center kalkulator">
         <form class="needs-validation" action="">
-          <h1 tabindex="0" class="text-center purple fw-bold">Kalkulator IMT (Indeks Massa Tubuh)</h1>
+        <h1 tabindex="0" class="text-center purple fw-bold" style="
+    margin-top: 1rem;">
+          Kalkulator IMT (Indeks Massa Tubuh)
+        </h1>
+        <p class="imtikdesc" style="padding-inline: 53px; text-align: justify;">
+          Indeks Massa Tubuh (IMT) adalah ukuran yang digunakan untuk mengetahui status gizi seseorang dan kategori berat badan yang didapatkan dari bandingan berat dan tinggi badan. \n
+          Cara termudah untuk mengetahui apakah seseorang berisiko mengalami suatu penyakit kronis atau tidak.
+        </p>
           <div class="radio-tile-group d-flex justify-content-center flex-nowrap">
             <div class="input-container">
               <input tabindex="0" id="gender1" type="radio" value="laki" name="radio" required/>
               <div tabindex="0" class="radio-tile">
-                  <img class="bw radio-image" src="../images/laki.png" alt="Logo KKN" class="mb-4" style="width: 170px;" />
+                <img class="bw radio-image" src="../images/laki.png" alt="Logo KKN" class="mb-4" style="width: 170px;" />
                 <label for="gender1" class="mt-4">Laki-Laki</label>
               </div>
             </div>
             <div class="input-container">
               <input tabindex="0" id="gender2" type="radio" value="perempuan" name="radio" required/>
               <div tabindex="0" class="radio-tile">
-                  <img class="bw radio-image" src="../images/perempuan.png" alt="Logo KKN" class="mb-4" style="width: 170px;" />
+                <img class="bw radio-image" src="../images/perempuan.png" alt="Logo KKN" class="mb-4" style="width: 170px;" />
                 <label for="gender2" class="mt-4">Perempuan</label>
               </div>
             </div>
@@ -47,18 +55,43 @@ const Imtik = {
             </div>
           </div>
           <div class="d-grid">
-            <button tabindex="0" aria-label="tombol hitung" type="submit" class="btn btn-custom">Hitung</button>
+            <button tabindex="0" aria-label="tombol hitung" type="submit" class="btn btn-custom" style="
+    margin-bottom: 2rem;
+">Hitung</button>
           </div>
         </form>
       </div>
       <custom-loader></custom-loader>
       <div id="result" class="mt-4 mb-4 d-flex justify-content-center align-items-center"></div>
+  
+      <!-- Bootstrap Modal -->
+      <div class="modal fade" id="info-modal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="infoModalLabel">Informasi IMT</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Keluar"></button>
+            </div>
+            <div class="modal-body">
+              Indeks Massa Tubuh (IMT) adalah ukuran yang digunakan untuk mengetahui status gizi seseorang dan kategori berat badan yang didapatkan dari bandingan berat dan tinggi badan.
+
+              Cara termudah untuk mengetahui apakah seseorang berisiko mengalami suatu penyakit kronis atau tidak
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keluar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     `;
   },
+
   async afterRender() {
     const forms = document.querySelectorAll('.needs-validation');
     const loader = document.querySelector('custom-loader');
     const radioButtons = document.querySelectorAll('input[name="radio"]');
+    const infoIcon = document.getElementById('info-icon');
+    const modal = new bootstrap.Modal(document.getElementById('info-modal'));
 
     Array.prototype.slice.call(forms).forEach((form) => {
       form.addEventListener('submit', (event) => handleFormSubmit(event, form), false);
@@ -66,6 +99,10 @@ const Imtik = {
 
     radioButtons.forEach((radio) => {
       radio.addEventListener('change', handleRadioChange);
+    });
+
+    infoIcon.addEventListener('click', () => {
+      modal.show();
     });
 
     function handleFormSubmit(event, form) {
@@ -143,41 +180,42 @@ const Imtik = {
       }
 
       resultDiv.innerHTML = `
-      <div class="flex">
-        <section class="output">
-          <p>Usia: ${age} tahun</p>
-          <p>Jenis Kelamin: ${gender === 'laki' ? 'Laki Laki' : 'Perempuan'}</p>
-          <h3>Pengukuran IMT Kamu Adalah</h3>
-          <p id="bmi" class="bmi-score ${bmiClass}">${bmi.toFixed(2)}</p>
-          <p id="desc" class="${bmiClass}"><strong>${category}</strong></p>
-        </section>
-        
-        <section class="bmi-scale mt-4">
-          <div class="sangatkurus">
-            <h4>Sangat Kurus</h4>
-            <p>&lt; 17</p>
-          </div>
-          <div class="kurus">
-            <h4>Kurus</h4>
-            <p style="text-wrap: nowrap;">17 - 18.5</p>
-          </div>
-          <div class="normal">
-            <h4>Normal</h4>
-            <p style="text-wrap: nowrap;">18.5 – 25</p>
-          </div>
-          <div class="gemuk">
-            <h4>Gemuk</h4>
-            <p style="text-wrap: nowrap;">25 – 30</p>
-          </div>
-          <div class="obesitas">
-            <h4>Obesitas</h4>
-            <p>≥ 30</p>
-          </div>
-        </section>
+        <div class="flex">
+          <section class="output">
+            <p>Usia: ${age} tahun</p>
+            <p>Jenis Kelamin: ${gender === 'laki' ? 'Laki Laki' : 'Perempuan'}</p>
+            <h3>Pengukuran IMT Kamu Adalah</h3>
+            <p id="bmi" class="bmi-score ${bmiClass}">${bmi.toFixed(2)}</p>
+            <p id="desc" class="${bmiClass}"><strong>${category}</strong></p>
+          </section>
+          
+          <section class="bmi-scale mt-4">
+            <div class="sangatkurus">
+              <h4>Sangat Kurus</h4>
+              <p>&lt; 17</p>
+            </div>
+            <div class="kurus">
+              <h4>Kurus</h4>
+              <p style="text-wrap: nowrap;">17 - 18.5</p>
+            </div>
+            <div class="normal">
+              <h4>Normal</h4>
+              <p style="text-wrap: nowrap;">18.5 – 25</p>
+            </div>
+            <div class="gemuk">
+              <h4>Gemuk</h4>
+              <p style="text-wrap: nowrap;">25 – 30</p>
+            </div>
+            <div class="obesitas">
+              <h4>Obesitas</h4>
+              <p>≥ 30</p>
+            </div>
+          </section>
         </div>
       `;
     }
-  },
+  }
+  ,
 };
 
 export default Imtik;

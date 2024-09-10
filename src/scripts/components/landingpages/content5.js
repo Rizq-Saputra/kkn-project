@@ -8,7 +8,7 @@ class content5 extends HTMLElement {
           <span class="text-utama">Booklet</span>
         </h1>
          <div class="flipbook-container mt-4">
-          <iframe src="https://online.flippingbook.com/view/735578603/" width="100%" height="600px" style="border:none;" allowfullscreen></iframe>
+          <iframe src="https://flipbooks.fleepit.com/f-62783-booklet" width="100%" height="600px" style="border:none;" allowfullscreen></iframe>
         </div>
       </section>
     `;
